@@ -97,20 +97,50 @@ body {
 	height: 100%;
 	width: 100%;
 }
-
+.container {
+	min-width: 1246px;
+	margin: 0 auto;
+}
 #wrapper {
 	height: 100%;
-	margin: 25px auto;
+	margin: 0 auto;
 	max-width: 900px;
 	position: relative;
 }
 
 #content {
 	height: 100%;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	max-width: 1000px;
+	margin: 0 0 0 248px;
 	/*background-color: lightgray;*/
 	background-color: #ededed;
+}
+
+#wrap { width:1246px; 
+	margin:0 auto; 
+	/*border:3px solid red; */
+}
+#header { 
+	background-color:yellow; 
+	font-size:50px; 
+	text-align:center; 
+}
+#body { 
+	overflow:hidden; 
+	/*background-color: #ccc; */
+}
+#sidebar { 
+	float:left; 
+	width:246px; 
+	background-color:#fff; 
+	min-height:100%; 
+	clear: both;
+	position: fixed;
+ }
+
+.pad {
+	padding-bottom: 700px;
 }
 
 hr {
@@ -161,7 +191,7 @@ h1 {
 h2 {
 	color: #343534;
 	font-family: "proxima-nova-condensed","Helvetica Neue",Helvetica,sans-serif;
-	font-size: 25px;
+	font-size: 28px;
 	font-weight: 600;
 	line-height: 1em;
 	margin: 15px 0px;
@@ -184,15 +214,33 @@ h3 {
 	text-rendering: optimizeLegibility;
 }
 
-.nav {
-	position: fixed;
+nav {
+	position: absolute;
 	top: 225px;
-	left: 4%;
+	/*left: 4%;*/
+}
+
+nav ul li {
+	background-color: #f94d51;
+	text-decoration: none;
+	margin: 10px 0 10px;
+	padding: 5px 10px;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: #FFFFFF;
+
+}
+
+nav ul li a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
 }
 
 .adobe {
-	font-size: 36px;
-	padding-top: 30px;
+	font-size: 46px;
+	padding-top: 80px;
 	text-transform: uppercase;
 }
 
@@ -200,18 +248,30 @@ h3 {
 	color: #f94d51;
 	margin: 0;
 }
+
+a.red {
+	text-decoration: none;
+}
+
+.red:hover {
+	text-decoration: underline;
+}
 .logo {
 	/*background:#fff url("../img/gsp.svg") center center no-repeat;*/
 	overflow: hidden;
-	position: fixed;
-	top: 0;
+	position: relative;
+	/*top: 0;*/
 	left: 5%;
 	height: 216px;
 	width: 216px;
+	float: left;
 	/*height: 100%;*/
 	/*width: 100%;*/
 }
 
+aside {
+	clear: both;
+}
 
 p + h3 {
 	margin: 35px 0px 15px 0px;
@@ -298,7 +358,7 @@ li img {
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
 }
-.Wrapper img, nav {
+.Wrapper img {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -480,26 +540,60 @@ em {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
-@media only screen and (max-width: 1460px){
-	.nav {
+@media only screen and (max-width: 1270px){
+	#sidebar {
+		/*display: none;*/
+		/*width: 100%;*/
 		position: relative;
+		float: right;
+		background-color: #ebebeb;
+		/*margin: 10px 130px 200px 0;*/
+		margin: 0 135px 200px 0;
+		z-index: 1;
+	}
+
+	#content {
+		height: 100%;
+		width: 100%;
+		margin: 0 auto;
+
+	}
+
+	#wrap {
+		margin: 0 auto;
+		width: 100%;
+	}
+	nav {
+		/*position: relative;*/
+		float: right;
 		display: block;
 		top: auto;
 		left: auto;
+		width: 216px;
+		margin-top: 200px;
 	}
-}
-
-
-@media only screen and (max-width: 1650px){
 	.logo {
 		display: block;
 		position: relative;
 		top: auto;
-		left: auto;
+		/*left: auto;*/
 	}
 
 }
 
+@media only screen and (max-width: 865px){
+	#sidebar{
+		float: left;
+	}
+
+	#content{
+		float: left;
+	}
+
+	#body {
+		background-color: #ebebeb;
+	}
+}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
     /* Style adjustments for high resolution devices */
